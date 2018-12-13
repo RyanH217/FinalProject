@@ -26,7 +26,7 @@ public class Main extends JFrame implements ActionListener
 	public static void main (String args[])
 	{
 		//Pixlr for image editting
-		//OpenGameArt.org
+		//OpenGameArt.orgasdasdasd
 		Main main = new Main();
 	}
 	
