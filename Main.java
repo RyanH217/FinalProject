@@ -20,7 +20,6 @@ public class Main extends JFrame implements ActionListener
 	
 	JOptionPane rules;
 	
-	SpaceShip ship;
 	
 	private int frameHeight, frameWidth, buttonWidth, buttonHeight;
 	
@@ -37,7 +36,6 @@ public class Main extends JFrame implements ActionListener
 		play = new JButton("Play");
 		credits = new JButton("Credits");
 		exit = new JButton("Exit");
-		ship = new SpaceShip();
 		
 		setLocationRelativeTo(null);
 		setExtendedState(JFrame.MAXIMIZED_BOTH); 
