@@ -13,7 +13,7 @@ import java.io.File;
 import java.util.Random;
 public class Main extends JFrame implements ActionListener
 {
-	//ASD PLEASE WORK
+	//ASD PLEASE WORKadasd
 
 	JButton instructions;
 	JButton play;
