@@ -13,6 +13,7 @@ import java.io.File;
 import java.util.Random;
 public class Main extends JFrame implements ActionListener
 {
+	//ASD PLEASE WORK
 
 	JButton instructions;
 	JButton play;
@@ -26,8 +27,8 @@ public class Main extends JFrame implements ActionListener
 	
 	public static void main (String args[])
 	{
-		//Pixlr for image editting
-		//OpenGameArt.orgasdasdasd
+		//Pixlr for image edit
+		//OpenGameArt.org
 		Main main = new Main();
 	}
 	
