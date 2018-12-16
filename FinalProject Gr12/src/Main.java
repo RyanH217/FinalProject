@@ -36,21 +36,22 @@ public class Main extends JFrame implements ActionListener
 
 	public Main() throws IOException
 	{
+		setUndecorated(true);
 		setLocationRelativeTo(null);
 		setExtendedState(JFrame.MAXIMIZED_BOTH); 
-		setUndecorated(true);
 		setVisible(true);
 		setLayout(null);
 		frameHeight = getHeight();
 		frameWidth = getWidth();
 		
+
 		instructions = new JButton("Instructions");
 		play = new JButton("Play");
 		credits = new JButton("Credits");
 		exit = new JButton("Exit");
 		layers = new JLayeredPane();
 		background = new ImageContainer(frameWidth,frameHeight);
-		
+	
 		layers.add(background, 2,-1);
 		layers.setLayout(null);
 		layers.setBounds(0,0,frameWidth,frameHeight);
@@ -66,14 +67,9 @@ public class Main extends JFrame implements ActionListener
 		buttonSetup(instructions);
 		buttonSetup(credits);
 		buttonSetup(exit);
-		
-		
-		
 
 		add(layers);
-		layers.repaint();
-		
-
+		background.repaint();
 		
 		
 
