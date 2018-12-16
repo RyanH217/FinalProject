@@ -1,4 +1,3 @@
-
 import java.awt.*;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -10,35 +9,35 @@ import java.awt.event.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 public class Main extends JFrame implements ActionListener
 {
-	//ASD PLEASE WORKadasd
 
 	JButton instructions;
 	JButton play;
 	JButton credits;
 	JButton exit;
-	
+
 	JOptionPane rules;
-	
-	
+
 	private int frameHeight, frameWidth, buttonWidth, buttonHeight;
-	
-	public static void main (String args[])
+
+	public static void main (String args[]) throws IOException
 	{
 		//Pixlr for image edit
 		//OpenGameArt.org
 		Main main = new Main();
 	}
-	
-	public Main()
+
+	public Main() throws IOException
 	{
+
 		instructions = new JButton("Instructions");
 		play = new JButton("Play");
 		credits = new JButton("Credits");
 		exit = new JButton("Exit");
-		
+
 		setLocationRelativeTo(null);
 		setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		setUndecorated(true);
@@ -46,7 +45,7 @@ public class Main extends JFrame implements ActionListener
 		setLayout(null);
 		frameHeight = getHeight();
 		frameWidth = getWidth();
-		
+
 		buttonWidth = (int)(frameWidth/10.0);
 		buttonHeight =(int)(frameHeight/10.0);
 		play.setBounds(frameWidth/2-buttonWidth/2, buttonHeight*2, buttonWidth, buttonHeight);
@@ -58,7 +57,11 @@ public class Main extends JFrame implements ActionListener
 		buttonSetup(credits);
 		buttonSetup(exit);
 		
-		
+		add(new ImageContainer());
+	
+
+
+
 	}
 
 	private void buttonSetup(JButton button)
@@ -71,7 +74,7 @@ public class Main extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		String buttonType = e.getActionCommand();
-		
+
 		if (buttonType.equals("Play"))
 		{
 			//RUN THE GAME
@@ -88,7 +91,7 @@ public class Main extends JFrame implements ActionListener
 		{
 			System.exit(0);
 		}
-		
+
 	}
-	
+
 }
