@@ -35,11 +35,8 @@ public class Sprite
 
 	    private void loadImage() throws IOException {
 	        
-	    	image = new ImageIcon("src/resources/chicken.jpg");
-	    	newImage = image.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT);
-	        w = newImage.getWidth(null);
-	        h = newImage.getHeight(null);
-	        System.out.println(h);
+	    	image = new ImageIcon("src/resources/sea.jpg");
+	    	newImage = image.getImage().getScaledInstance(w, h, Image.SCALE_FAST);
 	    }
 	
 

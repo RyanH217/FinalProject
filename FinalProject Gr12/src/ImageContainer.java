@@ -26,6 +26,7 @@ public class ImageContainer extends JPanel {
 
     private void initBoard() throws IOException {
 
+    	setLayout(null);
         sprite = new Sprite(width, height);
         setBounds(0, 0, width, height);
    

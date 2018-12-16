@@ -19,6 +19,10 @@ public class Main extends JFrame implements ActionListener
 	JButton credits;
 	JButton exit;
 
+
+	JLayeredPane layers;
+	ImageContainer background;
+	
 	JOptionPane rules;
 
 	private int frameHeight, frameWidth, buttonWidth, buttonHeight;
@@ -44,11 +48,16 @@ public class Main extends JFrame implements ActionListener
 		play = new JButton("Play");
 		credits = new JButton("Credits");
 		exit = new JButton("Exit");
-
-
+		layers = new JLayeredPane();
+		background = new ImageContainer(frameWidth,frameHeight);
+		
+		layers.add(background, 2,-1);
+		layers.setLayout(null);
+		layers.setBounds(0,0,frameWidth,frameHeight);
 
 		buttonWidth = (int)(frameWidth/10.0);
 		buttonHeight =(int)(frameHeight/10.0);
+		
 		play.setBounds(frameWidth/2-buttonWidth/2, buttonHeight*2, buttonWidth, buttonHeight);
 		instructions.setBounds(frameWidth/2-buttonWidth/2, buttonHeight*4, buttonWidth, buttonHeight);
 		credits.setBounds(frameWidth/2-buttonWidth/2, buttonHeight*6, buttonWidth, buttonHeight);
@@ -59,18 +68,24 @@ public class Main extends JFrame implements ActionListener
 		buttonSetup(exit);
 		
 		
-		add(new ImageContainer(frameWidth,frameHeight));
+		
 
+		add(layers);
+		layers.repaint();
+		
 
+		
+		
 
 	}
 
 	private void buttonSetup(JButton button)
 	{
+		button.setOpaque(true);
 		button.setVisible(true);
-		add(button);
 		button.addActionListener(this);
-		button.setFocusable(true);
+		layers.add(button, 2, 0);
+	
 	}
 	@Override
 	public void actionPerformed(ActionEvent e)
