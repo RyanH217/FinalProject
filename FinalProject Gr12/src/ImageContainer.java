@@ -15,18 +15,20 @@ public class ImageContainer extends JPanel {
 
 
     private Sprite sprite;
-   
+    private int width;
+    private int height;
 
-    public ImageContainer() throws IOException {
-
+    public ImageContainer(int width, int height) throws IOException {
+    	this.width = width;
+    	this.height = height;
         initBoard();
     }
 
     private void initBoard() throws IOException {
 
-    	setLayout(null);
-        sprite = new Sprite();
-        setBounds(sprite.getX(), sprite.getY(), sprite.getWidth(), sprite.getHeight());
+        sprite = new Sprite(width, height);
+        setBounds(0, 0, width, height);
+   
     }
 
     @Override

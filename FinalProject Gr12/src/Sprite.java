@@ -23,18 +23,23 @@ public class Sprite
 	    private int y = 60;
 	    private int w;
 	    private int h;
-	    private BufferedImage image;
-
-	    public Sprite() throws IOException {
+	    private ImageIcon image;
+	    Image newImage;
+	    
+	    
+	    public Sprite(int width, int height) throws IOException {
+	    	this.w = width;
+	    	this.h = height;
 	        loadImage();
 	    }
 
 	    private void loadImage() throws IOException {
 	        
-	    	image = ImageIO.read(new File("C:\\Users\\Ilan\\git\\repository\\download.jpg"));
-	        
-	        w = image.getWidth(null);
-	        h = image.getHeight(null);
+	    	image = new ImageIcon("src/resources/chicken.jpg");
+	    	newImage = image.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT);
+	        w = newImage.getWidth(null);
+	        h = newImage.getHeight(null);
+	        System.out.println(h);
 	    }
 	
 
@@ -48,18 +53,10 @@ public class Sprite
 	        return y;
 	    }
 	    
-	    public int getWidth() {
-	        
-	        return w;
-	    }
-	    
-	    public int getHeight() {
-	        
-	        return h;
-	    }    
+
 
 	    public Image getImage() {
 	        
-	        return image;
+	        return newImage;
 	    }
 }

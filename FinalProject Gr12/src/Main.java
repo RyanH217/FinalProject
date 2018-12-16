@@ -32,12 +32,6 @@ public class Main extends JFrame implements ActionListener
 
 	public Main() throws IOException
 	{
-
-		instructions = new JButton("Instructions");
-		play = new JButton("Play");
-		credits = new JButton("Credits");
-		exit = new JButton("Exit");
-
 		setLocationRelativeTo(null);
 		setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		setUndecorated(true);
@@ -45,6 +39,13 @@ public class Main extends JFrame implements ActionListener
 		setLayout(null);
 		frameHeight = getHeight();
 		frameWidth = getWidth();
+		
+		instructions = new JButton("Instructions");
+		play = new JButton("Play");
+		credits = new JButton("Credits");
+		exit = new JButton("Exit");
+
+
 
 		buttonWidth = (int)(frameWidth/10.0);
 		buttonHeight =(int)(frameHeight/10.0);
@@ -57,8 +58,8 @@ public class Main extends JFrame implements ActionListener
 		buttonSetup(credits);
 		buttonSetup(exit);
 		
-		add(new ImageContainer());
-	
+		
+		add(new ImageContainer(frameWidth,frameHeight));
 
 
 
@@ -69,6 +70,7 @@ public class Main extends JFrame implements ActionListener
 		button.setVisible(true);
 		add(button);
 		button.addActionListener(this);
+		button.setFocusable(true);
 	}
 	@Override
 	public void actionPerformed(ActionEvent e)
